@@ -149,10 +149,10 @@
             </button>
         </div>
     </div>
+
     <!-- Top Navigation -->
     <header class="fixed top-0 left-0 w-full z-40 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <a href="#hero" class="flex items-center space-x-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-teal to-accent-cyan flex items-center justify-center text-white font-bold font-mono text-xl shadow-lg">
                     JP
@@ -162,7 +162,6 @@
                     <span class="text-xs text-slate-400 font-mono" id="nav-role">IT Specialist</span>
                 </div>
             </a>
-            <!-- Navigation Links -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-sm font-medium text-slate-300 hover:text-accent-teal transition-colors">About</a>
                 <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-accent-teal transition-colors">Skills</a>
@@ -171,19 +170,16 @@
                 <a href="#experience" class="text-sm font-medium text-slate-300 hover:text-accent-teal transition-colors">Timeline</a>
                 <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-accent-teal transition-colors">Contact</a>
             </nav>
-            <!-- Action CTA -->
             <div class="hidden md:flex items-center space-x-4">
                 <a href="#contact" class="btn-gradient px-4 py-2 rounded-xl text-sm flex items-center space-x-2">
                     <i data-lucide="send" class="w-4 h-4"></i>
                     <span>Hire Me</span>
                 </a>
             </div>
-            <!-- Mobile Menu Toggle -->
             <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
-        <!-- Mobile Menu Drawer -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-navy-900/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3">
             <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-accent-teal">About</a>
             <a href="#skills" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-accent-teal">Skills</a>
@@ -193,24 +189,26 @@
             <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-slate-300 hover:text-accent-teal">Contact</a>
         </div>
     </header>
+
     <main class="pt-20">
         <!-- Hero Section -->
         <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 relative">
             <div class="max-w-5xl mx-auto text-center space-y-8">
                 
-                <!-- Profile Avatar & Image Edit Button -->
-                <div class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto group">
-                    <img id="hero-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Jayson Pepito Profile" class="w-full h-full rounded-full object-cover border-4 border-accent-teal/40 shadow-2xl">
+                <!-- Profile Avatar - Hidden by Default, Shows Only When You Set It -->
+                <div class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto group hidden" id="avatar-container">
+                    <img id="hero-avatar" src="" alt="Profile" class="w-full h-full rounded-full object-cover border-4 border-accent-teal/40 shadow-2xl">
                     <button onclick="openAvatarModal()" id="avatar-edit-btn" class="hidden absolute bottom-1 right-1 p-2 rounded-full bg-accent-cyan text-navy-950 shadow-lg hover:scale-110 transition-transform">
                         <i data-lucide="camera" class="w-4 h-4"></i>
                     </button>
                 </div>
+
                 <!-- Location Badge -->
                 <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card text-xs sm:text-sm font-medium text-accent-teal border border-accent-teal/20">
                     <span class="w-2 h-2 rounded-full bg-accent-teal animate-ping"></span>
                     <span id="hero-badge" class="editable-field" data-key="locationBadge">📍 Cagayan de Oro, Philippines • Available for Local & Remote Roles</span>
                 </div>
-                <!-- Hero Content -->
+
                 <div class="space-y-4">
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
                         Hi, I'm <span class="text-gradient editable-field" data-key="fullName" id="hero-fullname">Jayson Pepito</span>
@@ -222,7 +220,7 @@
                         Building enterprise-grade web applications, automated Python systems, and scalable databases for businesses in Cagayan de Oro and remote global teams.
                     </p>
                 </div>
-                <!-- CTA Buttons -->
+
                 <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
                     <a href="#projects" class="btn-gradient px-7 py-3.5 rounded-xl font-semibold flex items-center space-x-2 shadow-lg">
                         <span>View Featured Work</span>
@@ -232,10 +230,10 @@
                         Contact Me
                     </a>
                 </div>
-                <!-- Key Metrics Ticker -->
+
                 <div class="pt-10 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
                     <div class="glass-card p-4 rounded-2xl">
-                        <div class="text-3xl font-extrabold text-accent-teal font-mono" id="stat-experience">3+ Years</div>
+                        <div class="text-3xl font-extrabold text-accent-teal font-mono">3+ Years</div>
                         <div class="text-xs sm:text-sm text-slate-400 mt-1">IT & Software Dev</div>
                     </div>
                     <div class="glass-card p-4 rounded-2xl">
@@ -249,7 +247,8 @@
                 </div>
             </div>
         </section>
-        <!-- About Me Section -->
+
+        <!-- About Section -->
         <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="flex items-center space-x-3 mb-12">
@@ -268,7 +267,6 @@
                         <div class="editable-field" data-key="aboutParagraph3">
                             Driven by Northern Mindanao's burgeoning tech industry, I am committed to delivering clean, maintainable code and exceptional technical support for local organizations as well as international remote enterprises.
                         </div>
-                        <!-- Core Capabilities List -->
                         <div class="pt-4 flex flex-wrap gap-3">
                             <span class="px-3 py-1.5 rounded-lg text-xs font-mono bg-navy-850 text-slate-200 border border-white/5 flex items-center space-x-2">
                                 <i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent-teal"></i>
@@ -284,9 +282,8 @@
                             </span>
                         </div>
                     </div>
-                    <!-- Highlight Card -->
                     <div class="md:col-span-5">
-                        <div class="glass-card p-6 rounded-3xl space-y-6 relative overflow-hidden">
+                        <div class="glass-card p-6 rounded-3xl space-y-6">
                             <div class="flex items-center space-x-4">
                                 <div class="w-14 h-14 rounded-2xl bg-accent-teal/10 border border-accent-teal/20 flex items-center justify-center text-accent-teal">
                                     <i data-lucide="map-pin" class="w-7 h-7"></i>
@@ -299,15 +296,15 @@
                             <div class="space-y-3 pt-2 text-sm text-slate-300">
                                 <div class="flex justify-between border-b border-white/5 pb-2">
                                     <span class="text-slate-400">Main Focus:</span>
-                                    <span class="font-medium text-white">Web Apps & IT Systems</span>
+                                    <span class="font-medium text-white editable-field" data-key="focus">Web Apps & IT Systems</span>
                                 </div>
                                 <div class="flex justify-between border-b border-white/5 pb-2">
                                     <span class="text-slate-400">Languages:</span>
-                                    <span class="font-medium text-white">English, Tagalog, Bisaya</span>
+                                    <span class="font-medium text-white editable-field" data-key="languages">English, Tagalog, Bisaya</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-slate-400">Work Setup:</span>
-                                    <span class="font-medium text-accent-teal">Remote / CDO On-site</span>
+                                    <span class="font-medium text-accent-teal editable-field" data-key="workMode">Remote / CDO On-site</span>
                                 </div>
                             </div>
                         </div>
@@ -315,6 +312,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Skills Section -->
         <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
@@ -324,49 +322,47 @@
                     <div class="h-px bg-white/10 flex-grow max-w-md"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Frontend -->
                     <div class="glass-card p-6 rounded-3xl space-y-4">
                         <div class="flex items-center space-x-3 text-accent-teal">
                             <i data-lucide="layout" class="w-6 h-6"></i>
                             <h3 class="font-bold text-white text-xl">Frontend Development</h3>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center justify-between"><span>React & Vite</span><span class="text-xs font-mono text-accent-teal">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>Tailwind CSS & UI</span><span class="text-xs font-mono text-accent-teal">Expert</span></li>
-                            <li class="flex items-center justify-between"><span>JavaScript (ES6+)</span><span class="text-xs font-mono text-accent-teal">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>Responsive Design</span><span class="text-xs font-mono text-accent-teal">Expert</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-fe-1">React & Vite</span><span class="text-xs font-mono text-accent-teal">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-fe-2">Tailwind CSS & UI</span><span class="text-xs font-mono text-accent-teal">Expert</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-fe-3">JavaScript (ES6+)</span><span class="text-xs font-mono text-accent-teal">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-fe-4">Responsive Design</span><span class="text-xs font-mono text-accent-teal">Expert</span></li>
                         </ul>
                     </div>
-                    <!-- Backend & DB -->
                     <div class="glass-card p-6 rounded-3xl space-y-4">
                         <div class="flex items-center space-x-3 text-accent-cyan">
                             <i data-lucide="server" class="w-6 h-6"></i>
                             <h3 class="font-bold text-white text-xl">Backend & Database</h3>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center justify-between"><span>Python 3</span><span class="text-xs font-mono text-accent-cyan">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>Flask REST API</span><span class="text-xs font-mono text-accent-cyan">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>MySQL & SQL Architecture</span><span class="text-xs font-mono text-accent-cyan">Proficient</span></li>
-                            <li class="flex items-center justify-between"><span>Auth & API Integration</span><span class="text-xs font-mono text-accent-cyan">Proficient</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-be-1">Python 3</span><span class="text-xs font-mono text-accent-cyan">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-be-2">Flask REST API</span><span class="text-xs font-mono text-accent-cyan">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-be-3">MySQL & SQL Architecture</span><span class="text-xs font-mono text-accent-cyan">Proficient</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-be-4">Auth & API Integration</span><span class="text-xs font-mono text-accent-cyan">Proficient</span></li>
                         </ul>
                     </div>
-                    <!-- Tools & IT Support -->
                     <div class="glass-card p-6 rounded-3xl space-y-4">
                         <div class="flex items-center space-x-3 text-accent-emerald">
                             <i data-lucide="wrench" class="w-6 h-6"></i>
                             <h3 class="font-bold text-white text-xl">Tools & IT Support</h3>
                         </div>
                         <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-center justify-between"><span>Git & GitHub Workflows</span><span class="text-xs font-mono text-accent-emerald">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>Vercel Cloud Deployment</span><span class="text-xs font-mono text-accent-emerald">Advanced</span></li>
-                            <li class="flex items-center justify-between"><span>Hardware & Troubleshooting</span><span class="text-xs font-mono text-accent-emerald">Expert</span></li>
-                            <li class="flex items-center justify-between"><span>Network Configuration</span><span class="text-xs font-mono text-accent-emerald">Proficient</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-tools-1">Git & GitHub Workflows</span><span class="text-xs font-mono text-accent-emerald">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-tools-2">Vercel Cloud Deployment</span><span class="text-xs font-mono text-accent-emerald">Advanced</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-tools-3">Hardware & Troubleshooting</span><span class="text-xs font-mono text-accent-emerald">Expert</span></li>
+                            <li class="flex items-center justify-between"><span class="editable-field" data-key="skill-tools-4">Network Configuration</span><span class="text-xs font-mono text-accent-emerald">Proficient</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Featured Projects Section -->
+
+        <!-- Projects Section -->
         <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-12">
@@ -380,13 +376,11 @@
                         <span>Add New Project</span>
                     </button>
                 </div>
-                <!-- Dynamic Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
-                    <!-- Projects injected dynamically via JS -->
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container"></div>
             </div>
         </section>
-        <!-- Awards & Accomplishments Section -->
+
+        <!-- Awards Section -->
         <section id="awards" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-12">
@@ -400,13 +394,11 @@
                         <span>Add Accomplishment</span>
                     </button>
                 </div>
-                <!-- Dynamic Awards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="awards-container">
-                    <!-- Awards injected dynamically via JS -->
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="awards-container"></div>
             </div>
         </section>
-        <!-- Experience & Education Timeline -->
+
+        <!-- Timeline Section -->
         <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-4xl mx-auto">
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-12">
@@ -420,11 +412,10 @@
                         <span>Add Entry</span>
                     </button>
                 </div>
-                <div class="relative border-l border-white/10 ml-4 sm:ml-6 space-y-8" id="timeline-container">
-                    <!-- Timeline injected dynamically via JS -->
-                </div>
+                <div class="relative border-l border-white/10 ml-4 sm:ml-6 space-y-8" id="timeline-container"></div>
             </div>
         </section>
+
         <!-- Contact Section -->
         <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
@@ -439,7 +430,6 @@
                             Interested in collaborating on a web project, hiring an IT Specialist in CDO, or remote software engineering roles? Send me a message!
                         </p>
                         <div class="space-y-4">
-                            <!-- Email -->
                             <div class="glass-card p-4 rounded-2xl flex items-center justify-between">
                                 <div class="flex items-center space-x-3">
                                     <div class="p-2.5 rounded-xl bg-accent-teal/10 text-accent-teal">
@@ -450,11 +440,10 @@
                                         <div class="text-sm font-medium text-white font-mono editable-field" data-key="email">jayson.pepito.dev@gmail.com</div>
                                     </div>
                                 </div>
-                                <button onclick="copyToClipboard('jayson.pepito.dev@gmail.com')" class="text-slate-400 hover:text-accent-teal p-2">
+                                <button onclick="copyToClipboard(portfolioData.email)" class="text-slate-400 hover:text-accent-teal p-2">
                                     <i data-lucide="copy" class="w-4 h-4"></i>
                                 </button>
                             </div>
-                            <!-- Location -->
                             <div class="glass-card p-4 rounded-2xl flex items-center space-x-3">
                                 <div class="p-2.5 rounded-xl bg-accent-cyan/10 text-accent-cyan">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
@@ -464,18 +453,21 @@
                                     <div class="text-sm font-medium text-white editable-field" data-key="location">Cagayan de Oro, Misamis Oriental, Philippines 🇵🇭</div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Socials -->
-                        <div class="flex items-center space-x-4 pt-2">
-                            <a id="social-github" href="https://github.com" target="_blank" class="p-3 rounded-xl glass-card text-slate-300 hover:text-accent-teal">
-                                <i data-lucide="github" class="w-5 h-5"></i>
-                            </a>
-                            <a id="social-linkedin" href="https://linkedin.com" target="_blank" class="p-3 rounded-xl glass-card text-slate-300 hover:text-accent-cyan">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </a>
+                            <div class="glass-card p-4 rounded-2xl">
+                                <div class="text-xs text-slate-400 mb-2">Social Links</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-300">GitHub</span>
+                                        <a href="https://github.com" target="_blank" class="text-sm text-accent-cyan hover:underline editable-field" data-key="githubLink">https://github.com</a>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-slate-300">LinkedIn</span>
+                                        <a href="https://linkedin.com" target="_blank" class="text-sm text-accent-cyan hover:underline editable-field" data-key="linkedinLink">https://linkedin.com</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Contact Form -->
                     <div class="lg:col-span-7">
                         <form onsubmit="handleContactSubmit(event)" class="glass-card p-6 sm:p-8 rounded-3xl space-y-5">
                             <h3 class="text-xl font-bold text-white">Send Message</h3>
@@ -503,15 +495,11 @@
             </div>
         </section>
     </main>
-    <!-- Footer -->
+
     <footer class="border-t border-white/5 py-10 px-4 text-center text-xs text-slate-400 space-y-2">
         <p>Designed for <span class="text-accent-teal font-medium" id="footer-name">Jayson Pepito</span> • Cagayan de Oro, Philippines 🇵🇭</p>
         <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
-
-    <!-- ============================================== -->
-    <!-- ALL MODALS & SCRIPTS -->
-    <!-- ============================================== -->
 
     <!-- Modals -->
     <div id="project-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
@@ -527,7 +515,7 @@
                     <input type="text" id="pm-title" required class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-mono text-slate-400 mb-1">IMAGE URL (OR UPLOAD)</label>
+                    <label class="block text-xs font-mono text-slate-400 mb-1">IMAGE URL (optional)</label>
                     <div class="flex gap-2">
                         <input type="text" id="pm-image" placeholder="https://..." class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
                         <label class="px-3 py-2.5 bg-slate-800 rounded-xl cursor-pointer text-xs flex items-center shrink-0">
@@ -554,14 +542,17 @@
                         <input type="text" id="pm-github" placeholder="https://..." class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
                     </div>
                 </div>
-                <div class="flex justify-end space-x-3 pt-2">
-                    <button type="button" onclick="closeProjectModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
-                    <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Project</button>
+                <div class="flex justify-between pt-2">
+                    <button type="button" id="delete-project-btn" class="hidden px-3 py-2 rounded-lg text-xs text-red-400 hover:bg-red-500/10">🗑️ Delete Project</button>
+                    <div class="flex space-x-3">
+                        <button type="button" onclick="closeProjectModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
+                        <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Project</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- Award Edit / Add Modal -->
+
     <div id="award-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-lg rounded-3xl p-6 border border-white/10 space-y-4">
             <div class="flex items-center justify-between border-b border-white/10 pb-3">
@@ -585,21 +576,24 @@
                     </div>
                     <div>
                         <label class="block text-xs font-mono text-slate-400 mb-1">CATEGORY</label>
-                        <input type="text" id="am-category" placeholder="Certification / Hackathon" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
+                        <input type="text" id="am-category" placeholder="Certification" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-mono text-slate-400 mb-1">DESCRIPTION</label>
                     <textarea id="am-desc" rows="2" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2 text-sm text-white resize-none"></textarea>
                 </div>
-                <div class="flex justify-end space-x-3 pt-2">
-                    <button type="button" onclick="closeAwardModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
-                    <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Entry</button>
+                <div class="flex justify-between pt-2">
+                    <button type="button" id="delete-award-btn" class="hidden px-3 py-2 rounded-lg text-xs text-red-400 hover:bg-red-500/10">🗑️ Delete Entry</button>
+                    <div class="flex space-x-3">
+                        <button type="button" onclick="closeAwardModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
+                        <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Entry</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- Timeline Modal -->
+
     <div id="timeline-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-lg rounded-3xl p-6 border border-white/10 space-y-4">
             <div class="flex items-center justify-between border-b border-white/10 pb-3">
@@ -618,64 +612,56 @@
                 </div>
                 <div>
                     <label class="block text-xs font-mono text-slate-400 mb-1">PERIOD / DATES</label>
-                    <input type="text" id="tm-period" placeholder="2023 - Present" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
+                    <input type="text" id="tm-period" placeholder="2023 – Present" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
                 </div>
                 <div>
                     <label class="block text-xs font-mono text-slate-400 mb-1">DESCRIPTION</label>
                     <textarea id="tm-desc" rows="3" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2 text-sm text-white resize-none"></textarea>
                 </div>
-                <div class="flex justify-end space-x-3 pt-2">
-                    <button type="button" onclick="closeTimelineModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
-                    <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Entry</button>
+                <div class="flex justify-between pt-2">
+                    <button type="button" id="delete-timeline-btn" class="hidden px-3 py-2 rounded-lg text-xs text-red-400 hover:bg-red-500/10">🗑️ Delete Entry</button>
+                    <div class="flex space-x-3">
+                        <button type="button" onclick="closeTimelineModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
+                        <button type="submit" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Entry</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-    <!-- Avatar Uploader Modal -->
+
     <div id="avatar-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-md rounded-3xl p-6 border border-white/10 space-y-4">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                <h3 class="font-bold text-white text-lg">Update Profile Picture</h3>
-                <button onclick="closeAvatarModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-mono text-slate-400 mb-1">IMAGE URL</label>
-                    <input type="text" id="avatar-url-input" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white" placeholder="https://...">
-                </div>
-                <div class="text-center text-xs text-slate-400">- OR -</div>
-                <div>
-                    <label class="block text-xs font-mono text-slate-400 mb-1">UPLOAD FROM COMPUTER</label>
-                    <input type="file" accept="image/*" onchange="convertImageToBase64(event, 'avatar-url-input')" class="w-full bg-navy-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-slate-300">
+            <h3 class="font-bold text-white text-lg">Update Profile Photo</h3>
+            <div>
+                <label class="block text-xs font-mono text-slate-400 mb-1">IMAGE URL</label>
+                <div class="flex gap-2">
+                    <input type="text" id="avatar-url-input" class="w-full bg-navy-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white">
+                    <label class="px-3 py-2.5 bg-slate-800 rounded-xl cursor-pointer text-xs flex items-center shrink-0">
+                        <span>Browse</span>
+                        <input type="file" accept="image/*" onchange="convertImageToBase64(event, 'avatar-url-input')" class="hidden">
+                    </label>
                 </div>
             </div>
             <div class="flex justify-end space-x-3 pt-2">
-                <button onclick="closeAvatarModal()" class="px-4 py-2 rounded-xl text-xs text
-                                        text-slate-400 hover:text-white">Cancel</button>
-                <button onclick="saveAvatarPhoto()" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Apply Avatar</button>
+                <button onclick="closeAvatar>
+                    <div class="flex justify-end space-x-3 pt-2">
+                    <button onclick="closeAvatarModal()" class="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white">Cancel</button>
+                    <button onclick="saveAvatar()" class="btn-gradient px-5 py-2 rounded-xl text-xs font-semibold">Save Photo</button>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-6 z-50 transform -translate-y-10 opacity-0 transition-all duration-300 pointer-events-none glass-panel border border-accent-teal/40 px-5 py-3 rounded-2xl flex items-center space-x-3 shadow-2xl">
-        <i data-lucide="check-circle" class="w-5 h-5 text-accent-teal"></i>
-        <span id="toast-message" class="text-sm font-medium text-white"></span>
-    </div>
 
     <script>
-        // ==============================================
-        // 🔐 YOUR PASSWORD — CHANGE THIS IF YOU WANT
-        // ==============================================
-        const ADMIN_PASSWORD = "20031616";
+        // ======================
+        // EDIT PASSWORD CONFIG
+        // ======================
+        const EDIT_PASSWORD = "edit123"; // Change this to your own password
 
-        // State
-        let editModeUnlocked = false;
-        let portfolioData = {};
-
-        // ==============================================
-        // 📦 DEFAULT PORTFOLIO DATA
-        // ==============================================
-        const DEFAULT_DATA = {
+        // ======================
+        // PORTFOLIO DATA STORE
+        // ======================
+        let portfolioData = {
             fullName: "Jayson Pepito",
             heroRole: "IT Specialist / Full-Stack Developer",
             heroTagline: "Building enterprise-grade web applications, automated Python systems, and scalable databases for businesses in Cagayan de Oro and remote global teams.",
@@ -683,505 +669,511 @@
             aboutParagraph1: "I am a dedicated IT Specialist and Full-Stack Developer residing in Cagayan de Oro, Philippines. I specialize in bridging the gap between business operations and technological solutions—building fast, reliable, and user-friendly software systems.",
             aboutParagraph2: "My core technical stack includes Python, Flask, MySQL, React, Vite, and Tailwind CSS. Beyond web development, my background encompasses network administration, computer hardware repair, database optimization, and deployment workflows on platforms like Vercel.",
             aboutParagraph3: "Driven by Northern Mindanao's burgeoning tech industry, I am committed to delivering clean, maintainable code and exceptional technical support for local organizations as well as international remote enterprises.",
-            contactTagline: "Interested in collaborating on a web project, hiring an IT Specialist in CDO, or remote software engineering roles? Send me a message!",
+            focus: "Web Apps & IT Systems",
+            languages: "English, Tagalog, Bisaya",
+            workMode: "Remote / CDO On-site",
             email: "jayson.pepito.dev@gmail.com",
             location: "Cagayan de Oro, Misamis Oriental, Philippines 🇵🇭",
-            avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+            contactTagline: "Interested in collaborating on a web project, hiring an IT Specialist in CDO, or remote software engineering roles? Send me a message!",
+            githubLink: "https://github.com",
+            linkedinLink: "https://linkedin.com",
+            avatarImage: "",
             projects: [
                 {
-                    id: "proj-1",
+                    id: 1,
                     title: "Inventory Management System",
-                    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&auto=format&fit=crop&q=80",
-                    description: "A full-stack web-based inventory and sales tracking system built for local retail businesses.",
-                    tech: "Python, Flask, MySQL, HTML, Tailwind CSS",
-                    demo: "",
-                    github: "https://github.com"
+                    description: "A full-stack web application for tracking stock levels, sales, and supplier data with real-time updates and reporting.",
+                    tech: "Python, Flask, MySQL, Tailwind CSS",
+                    image: "",
+                    demoLink: "",
+                    githubLink: ""
                 },
                 {
-                    id: "proj-2",
-                    title: "Student Record & Grading Portal",
-                    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&auto=format&fit=crop&q=80",
-                    description: "Secure database-driven platform for managing student data, grades, and academic records.",
-                    tech: "React, Vite, Node.js, MySQL, REST API",
-                    demo: "",
-                    github: "https://github.com"
+                    id: 2,
+                    title: "Business Website & CMS",
+                    description: "Responsive company website with custom content management system for easy updates.",
+                    tech: "React, Vite, Node.js, MongoDB",
+                    image: "",
+                    demoLink: "",
+                    githubLink: ""
                 },
                 {
-                    id: "proj-3",
-                    title: "Business Landing & Portfolio Website",
-                    image: "https://images.unsplash.com/photo-1467232004584-aec17d54c31a?w=600&auto=format&fit=crop&q=80",
-                    description: "Modern, responsive portfolio and service showcase site deployed on Vercel.",
-                    tech: "React, Vite, Tailwind CSS, Lucide Icons",
-                    demo: "",
-                    github: "https://github.com"
+                    id: 3,
+                    title: "Automated Data Processing Tool",
+                    description: "Python-based automation script for report generation and data entry reduction.",
+                    tech: "Python, Pandas, Excel, Scheduling",
+                    image: "",
+                    demoLink: "",
+                    githubLink: ""
                 },
                 {
-                    id: "proj-4",
-                    title: "Automated Python Data Processor",
-                    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80",
-                    description: "Script-based automation tool for processing, cleaning, and organizing large CSV datasets.",
-                    tech: "Python, Pandas, OpenPyXL, File I/O",
-                    demo: "",
-                    github: "https://github.com"
+                    id: 4,
+                    title: "Local Service Directory Platform",
+                    description: "Community-focused directory connecting residents with local businesses and services.",
+                    tech: "Next.js, PostgreSQL, Map Integration",
+                    image: "",
+                    demoLink: "",
+                    githubLink: ""
                 }
             ],
             awards: [
                 {
-                    id: "award-1",
-                    title: "Best in Capstone Project",
-                    issuer: "Northern Mindanao Tech Summit",
+                    id: 1,
+                    title: "IT Support Professional Certification",
+                    issuer: "CompTIA",
                     date: "2025",
-                    category: "Academic Recognition",
-                    description: "Awarded for excellence in software development and system design."
+                    category: "Certification",
+                    description: "Comprehensive certification covering hardware, software, networking, and security fundamentals."
                 },
                 {
-                    id: "award-2",
-                    title: "Python for Professionals — Certification",
-                    issuer: "Online Learning Platform",
+                    id: 2,
+                    title: "Best Capstone Project",
+                    issuer: "Northern Mindanao Tech Summit",
+                    date: "2024",
+                    category: "Recognition",
+                    description: "Awarded for excellence in developing practical solutions for local communities."
+                },
+                {
+                    id: 3,
+                    title: "Python for Web Development",
+                    issuer: "Online Academy",
                     date: "2024",
                     category: "Certification",
-                    description: "Certified proficiency in Python programming and software engineering."
-                },
-                {
-                    id: "award-3",
-                    title: "Computer Systems Servicing — NC II",
-                    issuer: "TESDA / Accredited Center",
-                    date: "2023",
-                    category: "National Certification",
-                    description: "Certified competency in hardware, networking, and system maintenance."
+                    description: "Advanced backend development techniques using Python and modern frameworks."
                 }
             ],
             timeline: [
                 {
-                    id: "tl-1",
+                    id: 1,
                     role: "Freelance Full-Stack Developer",
                     org: "Self-Employed",
                     period: "2024 – Present",
-                    description: "Building custom web apps, database systems, and business solutions for clients in CDO and remote."
+                    description: "Building custom web applications and providing IT consulting for small businesses in CDO and international clients."
                 },
                 {
-                    id: "tl-2",
-                    role: "IT Support & Technician",
-                    org: "Local Computer Services",
-                    period: "2022 – 2024",
-                    description: "Hardware repair, network setup, troubleshooting, and system maintenance for residential and small business clients."
+                    id: 2,
+                    role: "IT Support Specialist",
+                    org: "Local Tech Solutions",
+                    period: "2023 – 2024",
+                    description: "Managed network infrastructure, hardware maintenance, and system troubleshooting for educational institutions."
                 },
                 {
-                    id: "tl-3",
-                    role: "Information Technology — Diploma",
-                    org: "Misamis Oriental State College",
+                    id: 3,
+                    role: "Computer Systems Technology Student",
+                    org: "Northern Mindanao State College",
                     period: "2020 – 2023",
-                    description: "Specialized in programming, database management, and computer systems. Graduated with honors."
+                    description: "Specialized in programming, database management, and network administration. Graduated with honors."
                 }
             ]
         };
 
-        // ==============================================
-        // 🔐 PASSWORD VERIFICATION
-        // ==============================================
-        function checkPassword(userInput) {
-            return String(userInput || "").trim() === String(ADMIN_PASSWORD).trim();
-        }
+        let editModeActive = false;
 
+        // ======================
+        // INITIALIZE
+        // ======================
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedData();
+            renderAllContent();
+            lucide.createIcons();
+            setupEditableFields();
+        });
+
+        // ======================
+        // PASSWORD VERIFICATION
+        // ======================
         function verifyPassword() {
             const input = document.getElementById('password-input').value;
             const errorEl = document.getElementById('password-error');
-
-            if (checkPassword(input)) {
-                editModeUnlocked = true;
-                localStorage.setItem('portfolio_unlocked', 'true');
+            
+            if (input === EDIT_PASSWORD) {
                 document.getElementById('password-modal').classList.add('hidden');
-                enableEditMode();
-                showToast("✅ Edit mode unlocked!");
+                document.getElementById('cms-toolbar').classList.remove('opacity-0', 'invisible');
+                document.getElementById('cms-toolbar').classList.add('opacity-100', 'visible');
+                editModeActive = true;
+                toggleEditMode(true);
             } else {
                 errorEl.classList.remove('hidden');
             }
         }
 
-        // ==============================================
-        // 🚀 INITIALIZATION
-        // ==============================================
-        function init() {
-            // Load saved data or use defaults
+        // ======================
+        // LOAD / SAVE DATA
+        // ======================
+        function loadSavedData() {
             const saved = localStorage.getItem('portfolioData');
-            portfolioData = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_DATA));
-
-            // Apply data to page
-            renderAllData();
-
-            // Check if already unlocked
-            if (localStorage.getItem('portfolio_unlocked') === 'true') {
-                document.getElementById('password-modal').classList.add('hidden');
-                enableEditMode();
-            }
-
-            // Attach edit mode toggle
-            document.getElementById('edit-mode-toggle').addEventListener('change', toggleEditModeHighlight);
-
-            // Enter key for password
-            document.getElementById('password-input').addEventListener('keydown', e => {
-                if (e.key === 'Enter') verifyPassword();
-            });
-
-            // Initialize Lucide icons
-            lucide.createIcons();
+            if (saved) portfolioData = JSON.parse(saved);
         }
-
-        // ==============================================
-        // 🎨 RENDER ALL DATA TO PAGE
-        // ==============================================
-        function renderAllData() {
-            // Hero & Text Fields
-            document.getElementById('hero-fullname').textContent = portfolioData.fullName;
-            document.getElementById('nav-name').textContent = portfolioData.fullName;
-            document.getElementById('footer-name').textContent = portfolioData.fullName;
-            document.getElementById('hero-role').textContent = portfolioData.heroRole;
-            document.getElementById('nav-role').textContent = portfolioData.heroRole;
-            document.getElementById('hero-tagline').textContent = portfolioData.heroTagline;
-            document.getElementById('hero-badge').textContent = portfolioData.locationBadge;
-            document.getElementById('email').textContent = portfolioData.email;
-            document.getElementById('location').textContent = portfolioData.location;
-            document.getElementById('contactTagline').textContent = portfolioData.contactTagline;
-            document.getElementById('hero-avatar').src = portfolioData.avatarUrl;
-
-            // About Paragraphs
-            const editableFields = document.querySelectorAll('.editable-field');
-            editableFields.forEach(field => {
-                const key = field.dataset.key;
-                if (portfolioData[key]) field.textContent = portfolioData[key];
-                field.addEventListener('blur', () => updateField(field));
-                field.addEventListener('keydown', e => {
-                    if (e.key === 'Enter') field.blur();
-                });
-            });
-
-            // Projects
-            renderProjects();
-
-            // Awards
-            renderAwards();
-
-            // Timeline
-            renderTimeline();
-
-            // Update stats
-            document.getElementById('stat-projects-count').textContent = `${portfolioData.projects.length} Key`;
-            document.getElementById('stat-awards-count').textContent = `${portfolioData.awards.length} Awards`;
-        }
-
-        function renderProjects() {
-            const container = document.getElementById('projects-container');
-            container.innerHTML = '';
-            portfolioData.projects.forEach(proj => {
-                container.innerHTML += `
-                <div class="glass-card rounded-3xl overflow-hidden group" data-id="${proj.id}">
-                    <div class="aspect-video overflow-hidden">
-                        <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <h3 class="text-xl font-bold text-white">${proj.title}</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">${proj.description}</p>
-                        <div class="flex flex-wrap gap-2 pt-1">
-                            ${proj.tech.split(',').map(t => `<span class="px-2 py-1 bg-navy-800 text-xs text-slate-300 rounded-lg">${t.trim()}</span>`).join('')}
-                        </div>
-                        <div class="flex gap-3 pt-3">
-                            ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="text-sm text-accent-teal hover:underline flex items-center gap-1"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>` : ''}
-                            ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-sm text-slate-400 hover:text-white flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>` : ''}
-                            ${editModeUnlocked ? `<button onclick='openProjectModal(${JSON.stringify(proj).replaceAll("'", "\\'")})' class="ml-auto text-xs text-slate-400 hover:text-accent-cyan">Edit</button>` : ''}
-                        </div>
-                    </div>
-                </div>`;
-            });
-            lucide.createIcons();
-        }
-
-        function renderAwards() {
-            const container = document.getElementById('awards-container');
-            container.innerHTML = '';
-            portfolioData.awards.forEach(award => {
-                container.innerHTML += `
-                <div class="glass-card p-6 rounded-3xl" data-id="${award.id}">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="font-bold text-white">${award.title}</h3>
-                        ${editModeUnlocked ? `<button onclick='openAwardModal(${JSON.stringify(award).replaceAll("'", "\\'")})' class="text-xs text-slate-500 hover:text-accent-cyan">Edit</button>` : ''}
-                    </div>
-                    <p class="text-sm text-accent-teal font-medium">${award.issuer}</p>
-                    <p class="text-xs text-slate-400 mt-1">${award.date} • ${award.category}</p>
-                    <p class="text-sm text-slate-300 mt-3">${award.description}</p>
-                </div>`;
-            });
-            lucide.createIcons();
-        }
-
-        function renderTimeline() {
-            const container = document.getElementById('timeline-container');
-            container.innerHTML = '';
-            portfolioData.timeline.forEach(item => {
-                container.innerHTML += `
-                <div class="relative pl-8" data-id="${item.id}">
-                    <div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-accent-teal border-2 border-navy-900"></div>
-                    <div class="glass-card p-5 rounded-2xl">
-                        <div class="flex items-start justify-between mb-2">
-                            <h3 class="font-bold text-white">${item.role}</h3>
-                            ${editModeUnlocked ? `<button onclick='openTimelineModal(${JSON.stringify(item).replaceAll("'", "\\'")})' class="text-xs text-slate-500 hover:text-accent-cyan">Edit</button>` : ''}
-                        </div>
-                        <p class="text-sm text-accent-cyan">${item.org}</p>
-                        <p class="text-xs text-slate-400 mt-1">${item.period}</p>
-                        <p class="text-sm text-slate-300 mt-3">${item.description}</p>
-                    </div>
-                </div>`;
-            });
-            lucide.createIcons();
-        }
-
-        // ==============================================
-        // ✏️ FIELD EDITING & SAVE
-        // ==============================================
-        function updateField(field) {
-            const key = field.dataset.key;
-            portfolioData[key] = field.textContent.trim();
-            savePortfolioData();
-        }
-
-        function enableEditMode() {
-            editModeUnlocked = true;
-            document.getElementById('cms-toolbar').classList.remove('opacity-0', 'invisible');
-            document.getElementById('cms-toolbar').classList.add('opacity-100', 'visible');
-            document.getElementById('avatar-edit-btn').classList.remove('hidden');
-            document.getElementById('add-project-btn').classList.remove('hidden');
-            document.getElementById('add-award-btn').classList.remove('hidden');
-            document.getElementById('add-timeline-btn').classList.remove('hidden');
-            renderProjects();
-            renderAwards();
-            renderTimeline();
-        }
-
-        function toggleEditModeHighlight() {
-            const isOn = document.getElementById('edit-mode-toggle').checked;
-            document.querySelectorAll('.editable-field').forEach(el => {
-                if (isOn) {
-                    el.setAttribute('contenteditable', 'true');
-                    el.classList.add('edit-highlight');
-                } else {
-                    el.removeAttribute('contenteditable');
-                    el.classList.remove('edit-highlight');
-                }
-            });
-        }
-
-        function savePortfolioData() {
+        function saveData() {
             localStorage.setItem('portfolioData', JSON.stringify(portfolioData));
         }
 
-        // ==============================================
-        // 📤 EXPORT / IMPORT / RESET
-        // ==============================================
-        function exportPortfolioJSON() {
-            const blob = new Blob([JSON.stringify(portfolioData, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'portfolio-backup.json';
-            a.click();
-            URL.revokeObjectURL(url);
-            showToast("✅ Data exported!");
+        // ======================
+        // EDIT MODE TOGGLE
+        // ======================
+        document.getElementById('edit-mode-toggle').addEventListener('change', (e) => {
+            editModeActive = e.target.checked;
+            toggleEditMode(editModeActive);
+        });
+        function toggleEditMode(active) {
+            document.querySelectorAll('.editable-field').forEach(el => {
+                el.contentEditable = active;
+                el.classList.toggle('edit-highlight', active);
+            });
+            document.getElementById('cms-actions').classList.toggle('hidden', !active);
+            document.getElementById('add-project-btn').classList.toggle('hidden', !active);
+            document.getElementById('add-award-btn').classList.toggle('hidden', !active);
+            document.getElementById('add-timeline-btn').classList.toggle('hidden', !active);
+            document.getElementById('avatar-edit-btn')?.classList.toggle('hidden', !active);
+            document.getElementById('avatar-container')?.classList.toggle('hidden', !portfolioData.avatarImage && !active);
+            
+            if (active) syncEditableFieldsToData();
         }
 
-        function importPortfolioJSON(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = evt => {
-                try {
-                    portfolioData = JSON.parse(evt.target.result);
-                    savePortfolioData();
-                    renderAllData();
-                    showToast("✅ Data imported!");
-                } catch {
-                    showToast("❌ Invalid file");
-                }
-            };
-            reader.readAsText(file);
-        }
+        // ======================
+        // RENDER ALL CONTENT
+        // ======================
+        function renderAllContent() {
+            // Basic Info
+            document.getElementById('hero-fullname').textContent = portfolioData.fullName;
+            document.getElementById('nav-name').textContent = portfolioData.fullName;
+            document.getElementById('footer-name').textContent = portfolioData.fullName;
+            document.querySelector('[data-key="heroRole"]').textContent = portfolioData.heroRole;
+            document.querySelector('[data-key="heroTagline"]').textContent = portfolioData.heroTagline;
+            document.querySelector('[data-key="locationBadge"]').textContent = portfolioData.locationBadge;
+            document.querySelector('[data-key="aboutParagraph1"]').textContent = portfolioData.aboutParagraph1;
+            document.querySelector('[data-key="aboutParagraph2"]').textContent = portfolioData.aboutParagraph2;
+            document.querySelector('[data-key="aboutParagraph3"]').textContent = portfolioData.aboutParagraph3;
+            document.querySelector('[data-key="focus"]').textContent = portfolioData.focus;
+            document.querySelector('[data-key="languages"]').textContent = portfolioData.languages;
+            document.querySelector('[data-key="workMode"]').textContent = portfolioData.workMode;
+            document.querySelector('[data-key="email"]').textContent = portfolioData.email;
+            document.querySelector('[data-key="location"]').textContent = portfolioData.location;
+            document.querySelector('[data-key="contactTagline"]').textContent = portfolioData.contactTagline;
+            document.querySelector('[data-key="githubLink"]').href = portfolioData.githubLink;
+            document.querySelector('[data-key="linkedinLink"]').href = portfolioData.linkedinLink;
 
-        function resetDefaultData() {
-            if (confirm("Reset all content to default?")) {
-                portfolioData = JSON.parse(JSON.stringify(DEFAULT_DATA));
-                savePortfolioData();
-                renderAllData();
-                showToast("✅ Reset complete");
+            // Avatar
+            if (portfolioData.avatarImage) {
+                document.getElementById('hero-avatar').src = portfolioData.avatarImage;
+                document.getElementById('avatar-container').classList.remove('hidden');
             }
+
+            // Projects
+            renderProjects();
+            // Awards
+            renderAwards();
+            // Timeline
+            renderTimeline();
+
+            // Stats
+            document.getElementById('stat-projects-count').textContent = portfolioData.projects.length + ' Key';
+            document.getElementById('stat-awards-count').textContent = portfolioData.awards.length + ' Awards';
         }
 
-        // ==============================================
-        // 📋 MODAL HANDLERS — Projects, Awards, Timeline, Avatar
-        // ==============================================
-        function openProjectModal(proj) {
-            document.getElementById('project-modal').classList.remove('hidden');
-            document.getElementById('project-modal-title').textContent = proj ? "Edit Project" : "Add New Project";
-            document.getElementById('pm-id').value = proj?.id || '';
-            document.getElementById('pm-title').value = proj?.title || '';
-            document.getElementById('pm-image').value = proj?.image || '';
-            document.getElementById('pm-desc').value = proj?.description || '';
-            document.getElementById('pm-tech').value = proj?.tech || '';
-            document.getElementById('pm-demo').value = proj?.demo || '';
-            document.getElementById('pm-github').value = proj?.github || '';
+        // ======================
+        // RENDER PROJECTS
+        // ======================
+        function renderProjects() {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = portfolioData.projects.map(p => `
+                <div class="glass-card rounded-3xl overflow-hidden group" data-id="${p.id}">
+                    ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover">` : ''}
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-white">${p.title}</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">${p.description}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${p.tech.split(', ').map(t => `<span class="text-xs px-2 py-1 rounded-full bg-accent-teal/10 text-accent-teal">${t}</span>`).join('')}
+                        </div>
+                        <div class="flex gap-3 pt-2">
+                            ${p.demoLink ? `<a href="${p.demoLink}" target="_blank" class="text-sm text-accent-cyan hover:underline">Live Demo</a>` : ''}
+                            ${p.githubLink ? `<a href="${p.githubLink}" target="_blank" class="text-sm text-slate-400 hover:text-white">GitHub</a>` : ''}
+                            ${editModeActive ? `<button onclick="openProjectModal(${p.id})" class="ml-auto text-xs text-slate-400 hover:text-white">Edit</button>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        function closeProjectModal() {
-            document.getElementById('project-modal').classList.add('hidden');
+        // ======================
+        // RENDER AWARDS
+        // ======================
+        function renderAwards() {
+            const container = document.getElementById('awards-container');
+            container.innerHTML = portfolioData.awards.map(a => `
+                <div class="glass-card p-5 rounded-2xl" data-id="${a.id}">
+                    <div class="flex items-start justify-between mb-3">
+                        <span class="text-xs font-mono text-accent-emerald bg-accent-emerald/10 px-2 py-1 rounded-full">${a.category}</span>
+                        ${editModeActive ? `<button onclick="openAwardModal(${a.id})" class="text-slate-500 hover:text-white"><i data-lucide="edit-2" class="w-3.5 h-3.5"></i></button>` : ''}
+                    </div>
+                    <h4 class="font-bold text-white text-lg">${a.title}</h4>
+                    <p class="text-sm text-slate-400 mt-1">${a.issuer} • ${a.date}</p>
+                    ${a.description ? `<p class="text-xs text-slate-500 mt-2">${a.description}</p>` : ''}
+                </div>
+            `).join('');
+            lucide.createIcons();
         }
 
+        // ======================
+        // RENDER TIMELINE
+        // ======================
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = portfolioData.timeline.map(t => `
+                <div class="relative pl-8" data-id="${t.id}">
+                    <div class="absolute -left-[21px] top-1 w-3.5 h-3.5 rounded-full bg-accent-teal border-2 border-navy-900"></div>
+                    <div class="glass-card p-5 rounded-2xl">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h4 class="font-bold text-white text-lg">${t.role}</h4>
+                                <p class="text-sm text-accent-cyan">${t.org}</p>
+                                <p class="text-xs text-slate-400 mt-1 font-mono">${t.period}</p>
+                                ${t.description ? `<p class="text-sm text-slate-300 mt-2">${t.description}</p>` : ''}
+                            </div>
+                            ${editModeActive ? `<button onclick="openTimelineModal(${t.id})" class="text-slate-500 hover:text-white"><i data-lucide="edit-2" class="w-3.5 h-3.5"></i></button>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // ======================
+        // EDITABLE FIELDS SYNC
+        // ======================
+        function setupEditableFields() {
+            document.querySelectorAll('.editable-field').forEach(el => {
+                el.addEventListener('blur', () => {
+                    if (el.dataset.key) {
+                        portfolioData[el.dataset.key] = el.textContent;
+                        saveData();
+                        renderAllContent();
+                    }
+                });
+            });
+        }
+        function syncEditableFieldsToData() {
+            document.querySelectorAll('.editable-field').forEach(el => {
+                if (el.dataset.key) el.textContent = portfolioData[el.dataset.key];
+            });
+        }
+
+        // ======================
+        // PROJECT MODALS
+        // ======================
+        function openProjectModal(id) {
+            const modal = document.getElementById('project-modal');
+            const delBtn = document.getElementById('delete-project-btn');
+            if (id) {
+                const p = portfolioData.projects.find(x => x.id === id);
+                document.getElementById('pm-id').value = id;
+                document.getElementById('pm-title').value = p.title;
+                document.getElementById('pm-image').value = p.image || '';
+                document.getElementById('pm-desc').value = p.description;
+                document.getElementById('pm-tech').value = p.tech;
+                document.getElementById('pm-demo').value = p.demoLink || '';
+                document.getElementById('pm-github').value = p.githubLink || '';
+                document.getElementById('project-modal-title').textContent = 'Edit Project';
+                delBtn.classList.remove('hidden');
+                delBtn.onclick = () => { portfolioData.projects = portfolioData.projects.filter(x => x.id !== id); saveData(); renderProjects(); closeProjectModal(); };
+            } else {
+                document.getElementById('pm-id').value = '';
+                document.getElementById('pm-title').value = '';
+                document.getElementById('pm-image').value = '';
+                document.getElementById('pm-desc').value = '';
+                document.getElementById('pm-tech').value = '';
+                document.getElementById('pm-demo').value = '';
+                document.getElementById('pm-github').value = '';
+                document.getElementById('project-modal-title').textContent = 'Add New Project';
+                delBtn.classList.add('hidden');
+            }
+            modal.classList.remove('hidden');
+        }
+        function closeProjectModal() { document.getElementById('project-modal').classList.add('hidden'); }
         function saveProjectForm(e) {
             e.preventDefault();
-            const id = document.getElementById('pm-id').value || `proj-${Date.now()}`;
-            const updated = {
-                id,
+            const idVal = document.getElementById('pm-id').value;
+            const project = {
                 title: document.getElementById('pm-title').value,
                 image: document.getElementById('pm-image').value,
                 description: document.getElementById('pm-desc').value,
                 tech: document.getElementById('pm-tech').value,
-                demo: document.getElementById('pm-demo').value,
-                github: document.getElementById('pm-github').value
+                demoLink: document.getElementById('pm-demo').value,
+                githubLink: document.getElementById('pm-github').value
             };
-            const idx = portfolioData.projects.findIndex(p => p.id === id);
-            if (idx >= 0) portfolioData.projects[idx] = updated;
-            else portfolioData.projects.push(updated);
-            savePortfolioData();
-            renderProjects();
-            closeProjectModal();
-            showToast("✅ Project saved!");
+            if (idVal) {
+                const idx = portfolioData.projects.findIndex(x => x.id === parseInt(idVal));
+                portfolioData.projects[idx] = { ...portfolioData.projects[idx], ...project };
+            } else {
+                portfolioData.projects.push({ id: Date.now(), ...project });
+            }
+            saveData(); renderProjects(); closeProjectModal();
         }
 
-        function openAwardModal(award) {
-            document.getElementById('award-modal').classList.remove('hidden');
-            document.getElementById('award-modal-title').textContent = award ? "Edit Accomplishment" : "Add Accomplishment";
-            document.getElementById('am-id').value = award?.id || '';
-            document.getElementById('am-title').value = award?.title || '';
-            document.getElementById('am-issuer').value = award?.issuer || '';
-            document.getElementById('am-date').value = award?.date || '';
-            document.getElementById('am-category').value = award?.category || '';
-            document.getElementById('am-desc').value = award?.description || '';
+        // ======================
+        // AWARD MODALS
+        // ======================
+        function openAwardModal(id) {
+            const modal = document.getElementById('award-modal');
+            const delBtn = document.getElementById('delete-award-btn');
+            if (id) {
+                const a = portfolioData.awards.find(x => x.id === id);
+                document.getElementById('am-id').value = id;
+                document.getElementById('am-title').value = a.title;
+                document.getElementById('am-issuer').value = a.issuer;
+                document.getElementById('am-date').value = a.date;
+                document.getElementById('am-category').value = a.category;
+                document.getElementById('am-desc').value = a.description || '';
+                document.getElementById('award-modal-title').textContent = 'Edit Accomplishment';
+                delBtn.classList.remove('hidden');
+                delBtn.onclick = () => { portfolioData.awards = portfolioData.awards.filter(x => x.id !== id); saveData(); renderAwards(); closeAwardModal(); };
+            } else {
+                document.getElementById('am-id').value = '';
+                document.getElementById('am-title').value = '';
+                document.getElementById('am-issuer').value = '';
+                document.getElementById('am-date').value = '';
+                document.getElementById('am-category').value = '';
+                document.getElementById('am-desc').value = '';
+                document.getElementById('award-modal-title').textContent = 'Add Accomplishment';
+                delBtn.classList.add('hidden');
+            }
+            modal.classList.remove('hidden');
         }
-
-        function closeAwardModal() {
-            document.getElementById('award-modal').classList.add('hidden');
-        }
-
+        function closeAwardModal() { document.getElementById('award-modal').classList.add('hidden'); }
         function saveAwardForm(e) {
             e.preventDefault();
-            const id = document.getElementById('am-id').value || `award-${Date.now()}`;
-            const updated = {
-                id,
+            const idVal = document.getElementById('am-id').value;
+            const award = {
                 title: document.getElementById('am-title').value,
                 issuer: document.getElementById('am-issuer').value,
                 date: document.getElementById('am-date').value,
                 category: document.getElementById('am-category').value,
                 description: document.getElementById('am-desc').value
             };
-            const idx = portfolioData.awards.findIndex(a => a.id === id);
-            if (idx >= 0) portfolioData.awards[idx] = updated;
-            else portfolioData.awards.push(updated);
-            savePortfolioData();
-            renderAwards();
-            closeAwardModal();
-            showToast("✅ Accomplishment saved!");
+            if (idVal) {
+                const idx = portfolioData.awards.findIndex(x => x.id === parseInt(idVal));
+                portfolioData.awards[idx] = { ...portfolioData.awards[idx], ...award };
+            } else {
+                portfolioData.awards.push({ id: Date.now(), ...award });
+            }
+            saveData(); renderAwards(); closeAwardModal();
         }
 
-        function openTimelineModal(item) {
-            document.getElementById('timeline-modal').classList.remove('hidden');
-            document.getElementById('timeline-modal-title').textContent = item ? "Edit Timeline Entry" : "Add Entry";
-            document.getElementById('tm-id').value = item?.id || '';
-            document.getElementById('tm-role').value = item?.role || '';
-            document.getElementById('tm-org').value = item?.org || '';
-            document.getElementById('tm-period').value = item?.period || '';
-            document.getElementById('tm-desc').value = item?.description || '';
+        // ======================
+        // TIMELINE MODALS
+        // ======================
+        function openTimelineModal(id) {
+            const modal = document.getElementById('timeline-modal');
+            const delBtn = document.getElementById('delete-timeline-btn');
+            if (id) {
+                const t = portfolioData.timeline.find(x => x.id === id);
+                document.getElementById('tm-id').value = id;
+                document.getElementById('tm-role').value = t.role;
+                document.getElementById('tm-org').value = t.org;
+                document.getElementById('tm-period').value = t.period;
+                document.getElementById('tm-desc').value = t.description || '';
+                document.getElementById('timeline-modal-title').textContent = 'Edit Timeline Entry';
+                delBtn.classList.remove('hidden');
+                delBtn.onclick = () => { portfolioData.timeline = portfolioData.timeline.filter(x => x.id !== id); saveData(); renderTimeline(); closeTimelineModal(); };
+            } else {
+                document.getElementById('tm-id').value = '';
+                document.getElementById('tm-role').value = '';
+                document.getElementById('tm-org').value = '';
+                document.getElementById('tm-period').value = '';
+                document.getElementById('tm-desc').value = '';
+                document.getElementById('timeline-modal-title').textContent = 'Add Timeline Entry';
+                delBtn.classList.add('hidden');
+            }
+            modal.classList.remove('hidden');
         }
-
-        function closeTimelineModal() {
-            document.getElementById('timeline-modal').classList.add('hidden');
-        }
-
+        function closeTimelineModal() { document.getElementById('timeline-modal').classList.add('hidden'); }
         function saveTimelineForm(e) {
             e.preventDefault();
-            const id = document.getElementById('tm-id').value || `tl-${Date.now()}`;
-            const updated = {
-                id,
+            const idVal = document.getElementById('tm-id').value;
+            const entry = {
                 role: document.getElementById('tm-role').value,
                 org: document.getElementById('tm-org').value,
                 period: document.getElementById('tm-period').value,
                 description: document.getElementById('tm-desc').value
             };
-            const idx = portfolioData.timeline.findIndex(t => t.id === id);
-            if (idx >= 0) portfolioData.timeline[idx] = updated;
-            else portfolioData.timeline.push(updated);
-            savePortfolioData();
-            renderTimeline();
-            closeTimelineModal();
-            showToast("✅ Timeline entry saved!");
+            if (idVal) {
+                const idx = portfolioData.timeline.findIndex(x => x.id === parseInt(idVal));
+                portfolioData.timeline[idx] = { ...portfolioData.timeline[idx], ...entry };
+            } else {
+                portfolioData.timeline.push({ id: Date.now(), ...entry });
+            }
+            saveData(); renderTimeline(); closeTimelineModal();
         }
 
-        function openAvatarModal() {
-            document.getElementById('avatar-modal').classList.remove('hidden');
-            document.getElementById('avatar-url-input').value = portfolioData.avatarUrl;
+        // ======================
+        // AVATAR MODAL
+        // ======================
+        function openAvatarModal() { document.getElementById('avatar-modal').classList.remove('hidden'); document.getElementById('avatar-url-input').value = portfolioData.avatarImage || ''; }
+        function closeAvatarModal() { document.getElementById('avatar-modal').classList.add('hidden'); }
+        function saveAvatar() {
+            portfolioData.avatarImage = document.getElementById('avatar-url-input').value;
+            if (portfolioData.avatarImage) {
+                document.getElementById('hero-avatar').src = portfolioData.avatarImage;
+                document.getElementById('avatar-container').classList.remove('hidden');
+            } else {
+                document.getElementById('avatar-container').classList.add('hidden');
+            }
+            saveData(); closeAvatarModal();
         }
 
-        function closeAvatarModal() {
-            document.getElementById('avatar-modal').classList.add('hidden');
-        }
-
-        function saveAvatarPhoto() {
-            const url = document.getElementById('avatar-url-input').value;
-            portfolioData.avatarUrl = url;
-            document.getElementById('hero-avatar').src = url;
-            savePortfolioData();
-            closeAvatarModal();
-            showToast("✅ Avatar updated!");
-        }
-
-        // ==============================================
-        // 🖼️ IMAGE UPLOAD → BASE64 HELPER
-        // ==============================================
+        // ======================
+        // IMAGE UTILITY
+        // ======================
         function convertImageToBase64(e, targetId) {
             const file = e.target.files[0];
             if (!file) return;
             const reader = new FileReader();
-            reader.onload = evt => {
-                document.getElementById(targetId).value = evt.target.result;
-            };
+            reader.onload = (ev) => { document.getElementById(targetId).value = ev.target.result; };
             reader.readAsDataURL(file);
         }
 
-        // ==============================================
-        // 🔔 TOAST & UTILITIES
-        // ==============================================
-        function showToast(msg) {
-            const el = document.getElementById('toast');
-            document.getElementById('toast-message').textContent = msg;
-            el.classList.remove('opacity-0', '-translate-y-10');
-            el.classList.add('opacity-100', 'translate-y-0');
-            setTimeout(() => {
-                el.classList.add('opacity-0', '-translate-y-10');
-                el.classList.remove('opacity-100', 'translate-y-0');
-            }, 2500);
+        // ======================
+        // EXPORT / IMPORT / RESET
+        // ======================
+        function exportPortfolioJSON() {
+            const blob = new Blob([JSON.stringify(portfolioData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'portfolio-backup.json'; a.click(); URL.revokeObjectURL(url);
+        }
+        function importPortfolioJSON(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    portfolioData = JSON.parse(ev.target.result);
+                    saveData(); renderAllContent(); setupEditableFields();
+                    alert('✅ Data imported successfully');
+                } catch { alert('❌ Invalid file format'); }
+            };
+            reader.readAsText(file);
+        }
+        function resetDefaultData() {
+            if (confirm('⚠️ Reset all content to defaults? This cannot be undone!')) {
+                localStorage.removeItem('portfolioData');
+                location.reload();
+            }
         }
 
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => showToast("📋 Copied!"));
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
+        // ======================
+        // MISC HELPERS
+        // ======================
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => alert('✅ Copied to clipboard!')); }
         function handleContactSubmit(e) {
             e.preventDefault();
-            showToast("✅ Message sent! (Demo — connect backend for real delivery)");
+            alert('✅ Message sent! Thank you for reaching out.');
             e.target.reset();
         }
 
-        // Start
-        document.addEventListener('DOMContentLoaded', init);
+        // Enter key submits password
+        document.getElementById('password-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') verifyPassword(); });
     </script>
 </body>
 </html>
