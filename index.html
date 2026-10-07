@@ -703,9 +703,47 @@
     </div>
 
     <script>
-        const ADMIN_PASSWORD = "20031616"; // keep quotes
-if (userInput.trim() === ADMIN_PASSWORD) { ... }
+        // Set your secret edit password here
+const ADMIN_PASSWORD = "20031616";
 
+// Password validation function
+function checkPassword(userInput) {
+  // Remove extra spaces/newlines and trim whitespace
+  const cleanedInput = userInput.trim();
+  
+  // Strict comparison — both are strings
+  const isMatch = cleanedInput === ADMIN_PASSWORD;
+
+  // Debug logs (can remove later, helpful now)
+  console.log("Input received:", JSON.stringify(userInput));
+  console.log("After trim:", JSON.stringify(cleanedInput));
+  console.log("Expected:", JSON.stringify(ADMIN_PASSWORD));
+  console.log("Match:", isMatch);
+
+  return isMatch;
+}
+
+// Usage example — replace with YOUR actual input handler
+function validateAndProceed(inputValue) {
+  if (checkPassword(inputValue)) {
+    // ✅ Correct password — grant access
+    alert("Access granted!");
+    // Add your success code here (show edit form, redirect, etc.)
+  } else {
+    // ❌ Wrong password — show error
+    alert("Incorrect password! Access denied.");
+  }
+}
+
+// === Default Portfolio Data ===
+const defaultPortfolio = {
+  profile: {
+    fullName: "Jayson Pepito",
+    heroRole: "IT Specialist / Full-Stack Developer",
+    // rest of your portfolio data...
+  }
+  // keep your existing data structure below
+};
         // Default Portfolio Data Structure
         const defaultPortfolio = {
             profile: {
