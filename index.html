@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayson Pepito | Interactive Editable Portfolio & CMS</title>
+    <title>Jayson Pepito | Portfolio</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -126,7 +126,7 @@
         <div class="flex items-center space-x-2 border-r border-white/10 pr-3">
             <span class="text-xs font-mono text-slate-300 font-medium">EDIT MODE</span>
             <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="edit-mode-toggle" onchange="toggleEditMode()" class="sr-only peer">
+                <input type="checkbox" id="edit-mode-toggle" onchange="handleEditToggle()" class="sr-only peer">
                 <div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-teal"></div>
             </label>
         </div>
@@ -542,7 +542,7 @@
         <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
 
-    <!-- Project Edit / Add Modal -->
+    <!-- Modals -->
     <div id="project-modal" class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-2xl rounded-3xl p-6 border border-white/10 space-y-4 max-h-[90vh] overflow-y-auto">
             <div class="flex items-center justify-between border-b border-white/10 pb-3">
@@ -703,6 +703,9 @@
     </div>
 
     <script>
+        // Set your secret edit password here
+        const ADMIN_PASSWORD = "admin123";
+
         // Default Portfolio Data Structure
         const defaultPortfolio = {
             profile: {
@@ -809,18 +812,65 @@
             ]
         };
 
-        // State Management
         let appData = JSON.parse(localStorage.getItem('jayson_portfolio_data')) || defaultPortfolio;
         let isEditMode = false;
 
-        // Initialize App on Load
         window.onload = function() {
             lucide.createIcons();
             renderPortfolio();
         };
 
+        function handleEditToggle() {
+            const toggle = document.getElementById('edit-mode-toggle');
+            
+            if (toggle.checked) {
+                const pass = prompt("Enter Secret Admin Password to enable edit mode:");
+                if (pass === ADMIN_PASSWORD) {
+                    toggleEditMode(true);
+                } else {
+                    alert("Incorrect password! Access denied.");
+                    toggle.checked = false;
+                    toggleEditMode(false);
+                }
+            } else {
+                toggleEditMode(false);
+            }
+        }
+
+        function toggleEditMode(enable) {
+            isEditMode = enable;
+            const cmsActions = document.getElementById('cms-actions');
+            const avatarEditBtn = document.getElementById('avatar-edit-btn');
+            const addProjectBtn = document.getElementById('add-project-btn');
+            const addAwardBtn = document.getElementById('add-award-btn');
+            const addTimelineBtn = document.getElementById('add-timeline-btn');
+
+            if (isEditMode) {
+                cmsActions.classList.remove('hidden');
+                avatarEditBtn.classList.remove('hidden');
+                addProjectBtn.classList.remove('hidden');
+                addAwardBtn.classList.remove('hidden');
+                addTimelineBtn.classList.remove('hidden');
+
+                makeFieldsEditable(true);
+                showToast("Edit Mode Activated!");
+            } else {
+                cmsActions.classList.add('hidden');
+                avatarEditBtn.classList.add('hidden');
+                addProjectBtn.classList.add('hidden');
+                addAwardBtn.classList.add('hidden');
+                addTimelineBtn.classList.add('hidden');
+
+                makeFieldsEditable(false);
+                saveCurrentTextChanges();
+                saveDataToStorage();
+                showToast("Portfolio Saved!");
+            }
+
+            renderPortfolio();
+        }
+
         function renderPortfolio() {
-            // Render Profile Texts
             document.querySelectorAll('.editable-field').forEach(el => {
                 const key = el.dataset.key;
                 if (appData.profile[key]) {
@@ -828,25 +878,15 @@
                 }
             });
 
-            // Nav Name & Footer
             document.getElementById('nav-name').textContent = appData.profile.fullName;
             document.getElementById('hero-fullname').textContent = appData.profile.fullName;
             document.getElementById('footer-name').textContent = appData.profile.fullName;
-
-            // Avatar
             document.getElementById('hero-avatar').src = appData.profile.avatarUrl;
-
-            // Stats Counters
             document.getElementById('stat-projects-count').textContent = `${appData.projects.length} Key`;
             document.getElementById('stat-awards-count').textContent = `${appData.awards.length} Honors`;
 
-            // Render Projects
             renderProjects();
-
-            // Render Awards
             renderAwards();
-
-            // Render Timeline
             renderTimeline();
 
             lucide.createIcons();
@@ -943,39 +983,6 @@
             });
         }
 
-        function toggleEditMode() {
-            isEditMode = document.getElementById('edit-mode-toggle').checked;
-            const cmsActions = document.getElementById('cms-actions');
-            const avatarEditBtn = document.getElementById('avatar-edit-btn');
-            const addProjectBtn = document.getElementById('add-project-btn');
-            const addAwardBtn = document.getElementById('add-award-btn');
-            const addTimelineBtn = document.getElementById('add-timeline-btn');
-
-            if (isEditMode) {
-                cmsActions.classList.remove('hidden');
-                avatarEditBtn.classList.remove('hidden');
-                addProjectBtn.classList.remove('hidden');
-                addAwardBtn.classList.remove('hidden');
-                addTimelineBtn.classList.remove('hidden');
-
-                makeFieldsEditable(true);
-                showToast("Edit Mode Enabled. Click texts to edit inline!");
-            } else {
-                cmsActions.classList.add('hidden');
-                avatarEditBtn.classList.add('hidden');
-                addProjectBtn.classList.add('hidden');
-                addAwardBtn.classList.add('hidden');
-                addTimelineBtn.classList.add('hidden');
-
-                makeFieldsEditable(false);
-                saveCurrentTextChanges();
-                saveDataToStorage();
-                showToast("Portfolio Changes Saved!");
-            }
-
-            renderPortfolio();
-        }
-
         function makeFieldsEditable(enable) {
             document.querySelectorAll('.editable-field').forEach(el => {
                 if (enable) {
@@ -1001,7 +1008,6 @@
             localStorage.setItem('jayson_portfolio_data', JSON.stringify(appData));
         }
 
-        // Image Base64 Converter
         function convertImageToBase64(event, targetInputId) {
             const file = event.target.files[0];
             if (file) {
@@ -1013,7 +1019,6 @@
             }
         }
 
-        // Project CRUD
         function openProjectModal(id) {
             const modal = document.getElementById('project-modal');
             modal.classList.remove('hidden');
@@ -1079,7 +1084,6 @@
             showToast("Project deleted.");
         }
 
-        // Award CRUD
         function openAwardModal(id) {
             const modal = document.getElementById('award-modal');
             modal.classList.remove('hidden');
@@ -1139,7 +1143,6 @@
             showToast("Entry deleted.");
         }
 
-        // Timeline CRUD
         function openTimelineModal(id) {
             const modal = document.getElementById('timeline-modal');
             modal.classList.remove('hidden');
@@ -1196,14 +1199,15 @@
             showToast("Timeline entry removed.");
         }
 
-        // Avatar Modal
         function openAvatarModal() {
             document.getElementById('avatar-url-input').value = appData.profile.avatarUrl;
             document.getElementById('avatar-modal').classList.remove('hidden');
         }
+
         function closeAvatarModal() {
             document.getElementById('avatar-modal').classList.add('hidden');
         }
+
         function saveAvatarPhoto() {
             const newUrl = document.getElementById('avatar-url-input').value;
             if (newUrl) {
@@ -1215,7 +1219,6 @@
             }
         }
 
-        // JSON Import / Export
         function exportPortfolioJSON() {
             saveCurrentTextChanges();
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
@@ -1223,7 +1226,7 @@
             dlAnchorElem.setAttribute("href", dataStr);
             dlAnchorElem.setAttribute("download", `jayson_pepito_portfolio_${Date.now()}.json`);
             dlAnchorElem.click();
-            showToast("Exported Portfolio JSON Backup!");
+            showToast("Exported Portfolio JSON!");
         }
 
         function importPortfolioJSON(event) {
@@ -1237,7 +1240,7 @@
                             appData = imported;
                             saveDataToStorage();
                             renderPortfolio();
-                            showToast("Successfully imported backup portfolio!");
+                            showToast("Successfully imported portfolio!");
                         } else {
                             alert("Invalid portfolio JSON structure.");
                         }
@@ -1258,7 +1261,6 @@
             }
         }
 
-        // Utilities
         function copyToClipboard(text) {
             const textarea = document.createElement('textarea');
             textarea.value = text;
